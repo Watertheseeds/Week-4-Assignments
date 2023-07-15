@@ -1,0 +1,167 @@
+//Create an array called ages that contains the following values: 3, 9, 23, 64, 2, 8, 28, 93.
+
+//1. Programmatically subtract the value of the first element in the array from the value in the last element of the array.
+//Do not use numbers to reference the last element, find it programmatically.
+//ages[7] - ages[0] is not allowed!
+//Add a new age to your array and repeat the step above to ensure it is dynamic. (works for arrays of different lengths).
+//Use a loop to iterate through the array and calculate the average age.
+
+//1A Answer
+ages = [3, 9, 23, 64, 2, 8, 28, 93];
+let ageMath = (ages[ages.length - 1] - ages[0]);
+
+console.log(ageMath);
+
+//1B Answer
+ages = [3, 9, 23, 64, 2, 8, 28, 93, 100];
+let ageMath2 = (ages[ages.length - 1] - ages[0]);
+
+console.log(ageMath2);
+
+//1C Answer
+let total = 0
+
+for(let age = 0; age < ages.length; age++ ) {
+    total = ages[age] + total
+    console.log(total); 
+}
+console.log(total / ages.length);
+
+//2. Create an array called names that contains the following values: 'Sam', 'Tommy', 'Tim', 'Sally', 'Buck', 'Bob'.
+//A Use a loop to iterate through the array and calculate the average number of letters per name. 
+//B Use a loop to iterate through the array again and concatenate all the names together, separated by spaces.
+
+//2A Answer
+names = ['Sam', 'Tommy', 'Tim', 'Sally', 'Buck', 'Bob'];
+
+let namesss = 0
+
+for( let name = 0; name < names.length; name++) {
+    namesss = names[name].length + namesss
+    console.log(namesss)
+}
+console.log(namesss / names.length);
+
+//2B Answer
+let spnames = "";
+
+for( let name = 0; name < names.length; name++) {
+    if (name == 0) {
+        spnames = names[name]
+    } else {
+        spnames = spnames + ' ' + names[name];
+    }
+}
+console.log(spnames);
+
+//3. How do you access the last element of any array?
+names = ['Sam', 'Tommy', 'Tim', 'Sally', 'Buck', 'Bob'];
+let obama = names[names.length -1];
+console.log(obama);
+
+//4. How do you access the first element of any array?
+
+let elPrimero = names[0];
+console.log(elPrimero);
+//4A 
+
+//5. Create a new array called nameLengths. Write a loop to iterate over the previously created names array and add the length of each name to the nameLengths array.
+
+//For example:
+//let names = ["Kelly", "Sam", "Kate"];    // starting with this array
+//let nameLengths = [5, 3, 4];             // create a new array
+
+let newNames = ["Stacy", "Vicky", "Natasha"];
+let nameLengths = [];
+
+for (let i = 0; i < newNames.length; i++) {
+  nameLengths.push(newNames[i].length);
+}
+
+console.log(nameLengths);
+
+//6. Write a loop to iterate over the nameLengths array and calculate the sum of all the elements in the array.
+
+let answer = 0;
+
+for (let i = 0; i < nameLengths.length; i++) {
+  answer += nameLengths[i];
+}
+
+console.log(answer);
+
+
+//7. Write a function that takes two parameters, word and n, as arguments and returns the word concatenated to itself n number of times. (i.e. if I pass in 'Hello' and 3, I would expect the function to return 'HelloHelloHello').
+
+function greetings(word, n) {
+    let repeatedWord = '';
+    for (let i = 0; i < n; i++) {
+      repeatedWord += word;
+    }
+    return repeatedWord;
+  }
+  console.log(greetings('Yo', 7));
+
+//8. Write a function that takes two parameters, firstName and lastName, and returns a full name. The full name should be the first and the last name separated by a space.
+
+function fullName(firstName,lastName) {
+    return firstName + ' ' + lastName
+};
+
+console.log(fullName("Tyler,", "the Creator"))
+
+//9. Write a function that takes an array of numbers and returns true if the sum of all the numbers in the array is greater than 100.
+
+function addEmUp(numbers) {
+    let sum = 0;
+    for (let i = 0; i < numbers.length; i++) {
+      sum += numbers[i];
+    }
+    return sum > 100;
+  }
+  const numbas = [9, 10, 15, 21, 39, 54];
+  console.log(addEmUp(numbas));
+
+//10. Write a function that takes an array of numbers and returns the average of all the elements in the array.
+
+function calcTheAverage(numbers) {
+    let sum = 0;
+    for (let e = 0; e < numbers.length; e++) {
+        sum += numbers[e];
+    }
+    let average = sum / numbers.length;
+    return average;
+}
+console.log(calcTheAverage(numbas));
+
+//11. Write a function that takes two arrays of numbers and returns true if the average of the elements in the first array is greater than the average of the elements in the second array.
+
+const whoIsGreater = (arr1, arr2) => {
+    const average1 = arr1.reduce((sum, num) => sum + num, 0) /arr1.length;
+    const average2 = arr2.reduce((sum, num) => sum + num, 0) /arr2.length;
+
+    return average1 > average2
+};
+
+const arr1 = [69, 420 , 2];
+const arr2 = [9 , 10 , 21];
+console.log(whoIsGreater(arr1, arr2));
+
+
+//12. Write a function called willBuyDrink that takes a boolean isHotOutside, and a number moneyInPocket, and returns true if it is hot outside and if moneyInPocket is greater than 10.50.
+
+const willBuyDrink = (isHotOutside, moneyInPocket) => isHotOutside && moneyInPocket > 10.50;
+
+console.log(willBuyDrink(true, 11))
+
+//13. Create a function of your own that solves a problem. In comments, write what the function does and why you created it.
+
+const sellingYuGiOhCard = worth => {
+    if (worth >= 50) {
+        return "We'll take it!";
+    } else {
+        return "Sorry, gonna pass on this one";
+    }
+};
+
+console.log(sellingYuGiOhCard(65));
